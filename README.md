@@ -40,9 +40,20 @@ If you want, set the custom `UPSTREAM_REGISTRY1` to use your `private registry` 
 
 ```bash
 docker-compose up -d
+# or
+
+./start.sh
 ```
 
 That's about it.
+
+## Updating
+
+Pulls the newest images of `registry` and `traefik` and if needed, apply those.
+
+```
+./update.sh
+```
 
 ## SSL (production)
 
