@@ -5,8 +5,12 @@ services:
     labels:
       traefik.http.routers.registry1.tls: 'false'
   traefik:
+    ports:
+      # admin port
+      - 8000:8000
     environment:
       TRAEFIK_ACME_ENABLE: 'false'
       TRAEFIK_HTTPS_ENABLE: 'false'
+      TRAEFIK_ADMIN_ENABLE: 'true'
       # use the staging server
       # TRAEFIK_ACME_CASERVER: 'https://acme-staging-v02.api.letsencrypt.org/directory'
