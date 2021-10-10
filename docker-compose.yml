@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  registry-cache1:
+    image: registry
+    environment:
+      REGISTRY_PROXY_REMOTEURL: '${UPSTREAM_REGISTRY:-https://registry-1.docker.io}'
+      REGISTRY_PROXY_USERNAME: '${USERNAME:-}'
+      REGISTRY_PROXY_PASSWORD: '${PASSWORD:-}'
