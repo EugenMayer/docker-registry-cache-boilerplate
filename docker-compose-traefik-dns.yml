@@ -3,15 +3,15 @@ version: '3'
 services:
   registry-cache1:
     labels:
-      traefik.http.services.web.loadbalancer.server.port: 5000
-      traefik.http.routers.web.rule: 'Host(`${CACHE_DOMAIN1}`)'
-      traefik.http.routers.web.tls: 'true'
-      traefik.http.routers.web.tls.certresolver: 'default'
+      traefik.http.services.registry1.loadbalancer.server.port: 5000
+      traefik.http.routers.registry1.rule: 'Host(`${CACHE_DOMAIN1}`)'
+      traefik.http.routers.registry1.tls: 'true'
+      traefik.http.routers.registry1.tls.certresolver: 'default'
       traefik.enable: 'true'
   # see https://github.com/EugenMayer/docker-image-traefik
   traefik:
-    image: eugenmayer/traefik:2.x
     restart: always
+    image: eugenmayer/traefik:2.x
     ports:
       - 80:8080
       - 443:8443

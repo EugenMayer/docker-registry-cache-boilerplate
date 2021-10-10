@@ -11,6 +11,7 @@ You can use it for some or all, as you like.
 This concept is called pull-through cache, see official docs;
 
 - https://docs.docker.com/registry/recipes/mirror/
+- https://circleci.com/docs/2.0/docker-hub-pull-through-mirror/
 
 ## WAT is the difference
 

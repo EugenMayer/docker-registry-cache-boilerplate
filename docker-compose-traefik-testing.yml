@@ -3,7 +3,7 @@ version: '3'
 services:
   registry-cache1:
     labels:
-      traefik.http.routers.web.tls: 'false'
+      traefik.http.routers.registry1.tls: 'false'
   traefik:
     environment:
       TRAEFIK_ACME_ENABLE: 'false'
