@@ -15,8 +15,7 @@ This concept is called pull-through cache, see official docs;
 
 ## WAT is the difference
 
-Most of the pull through registries are i found (like [this](https://github.com/rpardini/docker-registry-proxy)) offer some what of a custom image, including a custom nginx.
-They also give you not fast upstart.
+Most of the pull through registries i found (like [this](https://github.com/rpardini/docker-registry-proxy)) offer some what of a custom image, including a custom nginx - why i want to reuse building blocks. They also rather tend to not give you not fast upstart.
 
 This is the main difference, we use the official `registry` image and we use an standalone ssl-offloader `traefik` which
 also gives us the ability to use `ACME` or what ever you pick from (or use no off-loader at all - or your own).
