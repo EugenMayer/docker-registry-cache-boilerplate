@@ -3,13 +3,13 @@ version: '3'
 services:
   registry-cache2:
     image: registry
-  labels:
-    traefik.http.services.registry2.loadbalancer.server.port: 5000
-    traefik.http.routers.registry2.rule: 'Host(`${CACHE_DOMAIN2}`)'
-    traefik.http.routers.registry2.tls: 'true'
-    traefik.http.routers.registry2.tls.certresolver: 'default'
-    traefik.enable: 'true'
-  environment:
-    REGISTRY_PROXY_REMOTEURL: '${UPSTREAM_REGISTRY2:-https://registry-1.docker.io}'
-    REGISTRY_PROXY_USERNAME: '${USERNAME2:-}'
-    REGISTRY_PROXY_PASSWORD: '${PASSWORD2:-}'
+    labels:
+      traefik.http.services.registry2.loadbalancer.server.port: 5000
+      traefik.http.routers.registry2.rule: 'Host(`${CACHE_DOMAIN2}`)'
+      traefik.http.routers.registry2.tls: 'true'
+      traefik.http.routers.registry2.tls.certresolver: 'default'
+      traefik.enable: 'true'
+    environment:
+      REGISTRY_PROXY_REMOTEURL: '${UPSTREAM_REGISTRY2:-https://registry-1.docker.io}'
+      REGISTRY_PROXY_USERNAME: '${USERNAME2:-}'
+      REGISTRY_PROXY_PASSWORD: '${PASSWORD2:-}'
