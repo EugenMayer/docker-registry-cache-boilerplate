@@ -8,3 +8,9 @@ services:
       REGISTRY_PROXY_REMOTEURL: '${UPSTREAM_REGISTRY:-https://registry-1.docker.io}'
       REGISTRY_PROXY_USERNAME: '${USERNAME:-}'
       REGISTRY_PROXY_PASSWORD: '${PASSWORD:-}'
+      
+networks:
+  default:
+    driver: bridge
+    driver_opts:
+      com.docker.network.driver.mtu: ${MTU:-1500}
